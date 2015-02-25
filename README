@@ -1,8 +1,8 @@
 
-This project simply provides singleton-mixin class by meta-propagation (https://github.
+This project simply provides singleton-mixin class by meta-propagation (https://github.com/hipeta/meta-propagate)
 
 Usage:
- 1. download meta-propagation (https://github...) and move it to quicklisp local-project.
+ 1. download meta-propagation (https://github.com/hipeta/meta-propagate) and move it to quicklisp local-project.
  2. download this project from git.
  3. move the directory to quicklisp local-projecct directory.
  4. (ql:quickload :singleton-mixin)
