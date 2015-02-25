@@ -1,5 +1,5 @@
 
-This project simply provides singleton-mixin class by meta-propagation (https://github.com/hipeta/meta-propagate)
+This project simply provides singleton-mixin class by using meta-propagation (https://github.com/hipeta/meta-propagate)
 
 Environment:
   sbcl 1.2.1 or higher
