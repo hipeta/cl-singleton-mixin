@@ -1,4 +1,4 @@
-;;;; singleton-mixin.lisp
+;;;; cl-singleton-mixin.lisp
 ;;;;  
 ;;;; Copyright 2015 hipeta (rhipeta@gmail.com)
 ;;;;
@@ -6,11 +6,11 @@
 ;;;; http://opensource.org/licenses/mit-license.php
 
 (in-package :cl-user)
-(defpackage singleton-mixin
+(defpackage cl-singleton-mixin
   (:use :cl)
   (:export :singleton-class
            :singleton-mixin))
-(in-package :singleton-mixin)
+(in-package :cl-singleton-mixin)
 
 (defclass singleton-class (standard-class)
   ((%the-singleton-instance :initform ())))

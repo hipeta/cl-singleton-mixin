@@ -1,12 +1,15 @@
 
 This project simply provides singleton-mixin class by meta-propagation (https://github.com/hipeta/meta-propagate)
 
+Environment:
+  sbcl 1.2.1 or higher
+
 Usage:
  1. download meta-propagation (https://github.com/hipeta/meta-propagate) and move it to quicklisp local-project.
  2. download this project from git.
  3. move the directory to quicklisp local-projecct directory.
- 4. (ql:quickload :singleton-mixin)
- 5. make your-class inherit singleton-mixin and your-class (and subclasses of your-class) become singleton-class.
+ 4. (ql:quickload :cl-singleton-mixin)
+ 5. make your-class inherit singleton-mixin and your-class (and subclasses of your-class) become singleton classes.
 
 License:
  This software is released under the MIT License, see LICENSE file.
