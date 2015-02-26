@@ -10,6 +10,6 @@
   :description "provides singleton-mixin class."
   :author "hipeta"
   :license "MIT"
-  :depends-on (:closer-mop :meta-propagate)
+  :depends-on (:closer-mop :metap)
   :components ((:file "cl-singleton-mixin")))
 
