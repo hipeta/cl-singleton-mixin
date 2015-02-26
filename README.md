@@ -1,6 +1,6 @@
 # cl-singleton-mixin
 
-This project simply provides singleton-mixin class by using meta-propagation (https://github.com/hipeta/meta-propagate)
+This project simply provides singleton-mixin class by using metap (https://github.com/hipeta/metap)
 
 ## Environment
 
@@ -8,7 +8,7 @@ This project simply provides singleton-mixin class by using meta-propagation (ht
 
 ## Usage
 
-1. download meta-propagation (https://github.com/hipeta/meta-propagate) and move it to quicklisp local-project.
+1. download metap (https://github.com/hipeta/metap) and move it to quicklisp local-project.
 1. download this project from git.
 1. move the directory to quicklisp local-projecct directory.
 1. (ql:quickload :cl-singleton-mixin)
@@ -16,4 +16,4 @@ This project simply provides singleton-mixin class by using meta-propagation (ht
 
 ## License
 
-This software is released under the MIT License, see LICENSE file.
+cl-singleton-mixin is released under the MIT License, see LICENSE file.
