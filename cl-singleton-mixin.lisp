@@ -22,6 +22,8 @@
     (or %the-singleton-instance (setf %the-singleton-instance (call-next-method)))))
 
 (defgeneric remove-singleton-instance (class)
+  (:method ((class symbol))
+    (remove-singleton-instance (find-class class)))
   (:method ((class singleton-class))
     (with-slots (%the-singleton-instance) class
       (setf %the-singleton-instance nil))))
