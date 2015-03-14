@@ -9,15 +9,25 @@
 (defpackage cl-singleton-mixin
   (:use :cl)
   (:export :singleton-class
-           :singleton-mixin))
+           :singleton-mixin
+           :remove-singleton-instance))
 (in-package :cl-singleton-mixin)
 
 (defclass singleton-class (standard-class)
   ((%the-singleton-instance :initform ())))
 (defclass singleton-mixin () ())
+
 (defmethod make-instance ((class singleton-class) &key)
   (with-slots (%the-singleton-instance) class
     (or %the-singleton-instance (setf %the-singleton-instance (call-next-method)))))
+
+(defgeneric remove-singleton-instance (class)
+  (:method ((class singleton-class))
+    (with-slots (%the-singleton-instance) class
+      (setf %the-singleton-instance nil))))
+
+(defmethod reinitialize-instance :after ((class singleton-class) &key)
+  (remove-singleton-instance class))
 
 (metap:validate-superclass* (singleton-class standard-class t)
                             (singleton-class singleton-class t)

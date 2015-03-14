@@ -34,3 +34,18 @@
   (is (not (eq (make-instance 'c) (make-instance 'd))))
   (is (not (eq (make-instance 'c) (make-instance 'e))))
   (is (not (eq (make-instance 'd) (make-instance 'e)))))
+
+(defmacro for-when-singleton-definition-changed-test (&body body)
+  `(progn (defclass test () ())
+          (defparameter *test-ins1* (make-instance 'test))
+          (defclass test () ())
+          (defparameter *test-ins2* (make-instance 'test))))
+
+#+sbcl
+(sb-ext:without-package-locks
+  (for-when-singleton-definition-changed-test))
+#-sbcl
+(for-when-singleton-definition-changed-test)
+
+(test when-singleton-definition-changed-test
+  (is (not (eq *test-ins1* *test-ins2*))))
