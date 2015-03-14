@@ -14,7 +14,7 @@
 (in-package :cl-singleton-mixin)
 
 (defclass singleton-class (standard-class)
-  ((%the-singleton-instance :initform ())))
+  ((%the-singleton-instance :initform nil)))
 (defclass singleton-mixin () ())
 
 (defmethod make-instance ((class singleton-class) &key)
