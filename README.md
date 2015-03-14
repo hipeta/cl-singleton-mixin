@@ -11,6 +11,11 @@ Cl-singleton-mixin simply provides singleton-mixin class by using metap (https:/
 
 (eq (make-instance 'some-singleton)
     (make-instance 'some-singleton))  ; => T
+
+(defclass some-child (some-singleton) ())
+
+(eq (make-instance 'some-child)
+    (make-instance 'some-child))  ; => T
 ```
 
 ## Installation
