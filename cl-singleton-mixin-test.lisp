@@ -12,12 +12,13 @@
 
 (in-suite* all)
 
-(metap:with-metap-ensured
-  (defclass a (singleton-mixin) ())
-  (defclass b (a) ())
-  (defclass c (b) ())
-  (defclass d (a) ())
-  (defclass e (c d) ()))
+(metap:enable-metap)
+
+(defclass a (singleton-mixin) ())
+(defclass b (a) ())
+(defclass c (b) ())
+(defclass d (a) ())
+(defclass e (c d) ())
 
 (test singleton-test
   (is (eq (make-instance 'a) (make-instance 'a)))
@@ -37,11 +38,10 @@
   (is (not (eq (make-instance 'd) (make-instance 'e)))))
 
 (defmacro for-when-singleton-definition-changed-test (&body body)
-  `(metap:with-metap-ensured
-     (defclass test () ())
-     (defparameter *test-ins1* (make-instance 'test))
-     (defclass test () ())
-     (defparameter *test-ins2* (make-instance 'test))))
+  `(progn (defclass test () ())
+          (defparameter *test-ins1* (make-instance 'test))
+          (defclass test () ())
+          (defparameter *test-ins2* (make-instance 'test))))
 
 #+sbcl
 (sb-ext:without-package-locks
