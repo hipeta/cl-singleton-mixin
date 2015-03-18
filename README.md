@@ -7,8 +7,6 @@ Cl-singleton-mixin simply provides singleton-mixin class by using metap (https:/
 ```
 (ql:quickload :cl-singleton-mixin)
 
-(metap:enable-metap)
-
 (defclass some-singleton (singleton-mixin) ())
 
 (eq (make-instance 'some-singleton)
