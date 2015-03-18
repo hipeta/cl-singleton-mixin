@@ -17,7 +17,7 @@
   ((%the-singleton-instance :initform nil)))
 (defclass singleton-mixin () ())
 
-(defmethod make-instance ((class singleton-class) &key)
+(defmethod make-instance :around ((class singleton-class) &key)
   (with-slots (%the-singleton-instance) class
     (or %the-singleton-instance (setf %the-singleton-instance (call-next-method)))))
 
@@ -34,4 +34,5 @@
 (metap:validate-superclass* (singleton-class standard-class t)
                             (singleton-class singleton-class t)
                             (standard-class singleton-class nil))
-(metap:register-m1-m2-pair 'singleton-mixin 'singleton-class)
+
+(metap:register-m1-m2-pair singleton-mixin singleton-class)

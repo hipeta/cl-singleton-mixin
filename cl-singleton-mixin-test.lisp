@@ -12,8 +12,6 @@
 
 (in-suite* all)
 
-(metap:enable-metap)
-
 (defclass a (singleton-mixin) ())
 (defclass b (a) ())
 (defclass c (b) ())
