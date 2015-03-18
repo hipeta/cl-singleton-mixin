@@ -35,4 +35,4 @@
                             (singleton-class singleton-class t)
                             (standard-class singleton-class nil))
 
-(metap:register-m1-m2-pair singleton-mixin singleton-class)
+(metap:register-m1-m2-pair 'singleton-mixin 'singleton-class)
