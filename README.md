@@ -20,10 +20,9 @@ Cl-singleton-mixin simply provides singleton-mixin class by using metap (https:/
 
 ## Installation
 
-1. Download metap (https://github.com/hipeta/metap) and move it to quicklisp local-project.
-1. Download this project from git.
-1. Move the directory to quicklisp local-projecct directory.
-1. (ql:quickload :cl-singleton-mixin)
+```
+(ql:quickload :cl-singleton-mixin)
+```
 
 ## License
 
